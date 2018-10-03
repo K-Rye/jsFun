@@ -16,7 +16,24 @@ const turingPrompts = {
     //  { name: 'Robbie', studentCount: 18 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.map((instructor) => {
+    let newInstructor = { name: instructor.name };
+        
+    let matchingCohort = cohorts.find((cohort) => {
+        return cohort.module === instructor.module;
+        });
+
+        newInstructor.studentCount = matchingCohort.studentCount
+        
+
+        // find cohort that matches instructors cohort -> cohorts.find() 
+        //Grab the studentCount value from that cohort -> matchingCohort.studentCount
+        //Add studentCount property to my newInstructor -. newInstructor.studentCount = studentCount
+
+    return newInstructor;
+
+
+    });
     return result;
 
     // Annotation:
@@ -262,6 +279,17 @@ const cakePrompts = {
     // },
     // ..etc
     // ]
+
+    const result = cakes.filter((currentCake) => {
+        return currentCake.inStock;
+    });
+
+    return result;
+
+
+    // Write your annotation here as a comment:
+    // I'm recieving an array of cakes and I want a subset of that array, so I am goin gto reach for filter. My filter callback will return only the cakes that have an inStock value.
+    
   }
 };
 
