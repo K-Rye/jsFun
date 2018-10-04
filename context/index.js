@@ -120,14 +120,14 @@ const context = {
 
     // Annotation: 
     // Write your annotation here as a comment
-    // Rule 3 states that when using the new keyword this will refer to the new instance of the object.
+    // Rule 3 states that when using the new keyword 'this' will refer to the new instance of the object.
   },
 
   exerciseG() {
     class Game {
       constructor(title) {
         this.title = title;
-    }
+      }
 
       resetGame() {
         console.log('Clearing the board and starting over');
@@ -164,11 +164,12 @@ const context = {
     obj.method();
 
     // What is the value of `this` when we call obj.arrowFunction()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'obj';
     return result;
 
     // Annotation: 
     // Write your annotation here as a comment
+    //According to rule 2, methods refer to their parent object so in this example this should refer to obj because it is the parent of the arrowFunction method.
   },
 
   exerciseI() {  
