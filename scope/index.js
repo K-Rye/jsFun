@@ -29,11 +29,18 @@ const scope = {
 
     // Log D: personC
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A:' 'Ben'},
+      {'B:' 'CardiB'},
+      {'C:' 'CardiB'},
+      {'D:' 'Paul'}
+
+    ];
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    //On line 3 we declare the variable personA and set its' value to Paul then on line 4 we declare the variable personB and set its' value to Ben. On line 5 we declare the variable personC setting its' value to Tom. On line 7 the function changePerson is declared but not invoked which moves us down to line 28 where we invoke the changePerson function bringing us back up to line 8 where we enter the if block that checks to see if the value of the personA variable is Paul. Since personA is globally scoped, javascript moves up the scope chain to check the value of personA which is Paul. We move to the next line where 'person' is being assigned to cardiB. Javascript looks to re-assign person since a keyword is not being used to assign it. It looks up the scope chain for a person assignment but does not find one so assigns person to the value of CardiB. Moving to line 10 the beautifyPerson function is invoked which takes us to line 13 and console.log A. Javascript looks up the scope chain for personBs' value    
   },
 
   exerciseB() {
@@ -268,11 +275,20 @@ const scope = {
 
     fn1();
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A:' 4},
+      {'D:' 9},
+      {'E:' 10}
+      {'B:' 9},
+      {'C:' 4},
+      
+
+    ];
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // On the first line we are declaring the variable num and setting its' value to 6. Then we declare the fn1 function but do not invoke it. We then move down and declare the fn2 function but again do not invoke it. Again, moving down we invoke the fn1 function which puts us in the function where we declare a functionally scoped variable num and set its' value to 4. Log A console logs 4 becuase it is with in the scope of the function. Then we move into an if block where we check to see if num is less than 5 and if it is we will declare a block scoped variable of num and set its' value to 9. The next line invokes the fn2 function and pases in the argument of num which takes us into the fn2 function. Log D will log 9 because the value of num passed into the invocation of fn2 is num which has the value of 9 within that block scope. The next line re-assigns num to num +1. As a result Log E will log 10 because it is taking the value of num passed into the argument which is 9 and adding 1. That brings us back up to our fn1 function inside the if block where we left off and are assigning newNum the value of num. Log E will equal 10. We move out of the if block and newNum is now assigned to the value of num. Because we are outside of the if block the value of num being re-assigned to newNum is 4. 
   },
 
   exerciseI() {
@@ -469,7 +485,7 @@ const scope = {
     var shoe = 'flipflop';
 
     function putOnShoe() {
-      // Log A: shoe
+      console.log('Log A:' shoe)
       var shoe = 'boot';
     }
 
@@ -477,11 +493,16 @@ const scope = {
     putOnShoe();
     // Log C: shoe
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'B:' 'flipflop'},
+      {'A:' 'undefined'},
+      {'C:' 'flipflop'}
+    ];
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // On line 469 we declare a global variable named shoe and assign it equal to flipflop then we declare a global function named putOnShoe but we skip down to line 469 because it hasn't been invoked yet . ON line 469 we log the value of shoe, which is flipflop at this point in time. The we go ahead and invoke our putOnShoe function and when we try to log shoe within our function, we get undefined because our shoe declaration on line 473 is hoisted to the top of that function scope. Once we've finished executing putOnShoe, we go back down to line 478 and log shoe again which will give us flipflop.
   }
 }
 
