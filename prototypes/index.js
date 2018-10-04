@@ -203,16 +203,33 @@ const classPrompts = {
 // DATASET: cakes from ./datasets/cakes
 const cakePrompts = {
   allToppings() {
-    // Return an array of all unique toppings (no duplicates) needed to bake
+        // Return an array of all unique toppings (no duplicates) needed to bake
     // every cake in the dataset e.g.
     // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    //The dataset is an array of objects
+    //I want back an array of unique toppings with no duplicates.
+    //I am reaching for map to return the toppings and then to reduce to create a single array. 
+    //I am still working on eliminating the duplicates
 
-    // Annotation:
-    // Write your annotation here as a comment
-  },
+    const result = cakes.map((cake) => {
+      // console.log(cake)
+      return cake.toppings; 
+    });
+  
+    const toppingArray = result.reduce((singleArray, topping) => {
+      let combinedToppings = singleArray.concat(topping);
+      return combinedToppings;
+    }, []);
+
+    toppingArray
+
+    const noDuplicateToppings = toppingArray.filter((elem, index, self) => {
+      return index == self.indexOf(elem);
+    });
+
+    noDuplicateToppings
+
 
   groceryList() {
     // I need to make a grocery list. Please give me an object where the keys are
@@ -225,8 +242,18 @@ const cakePrompts = {
     //    ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const result = cakes.reduce((groceryList, cake) => {
+      cake.toppings.forEach((eachTopping) => {
+       if(!groceryList[eachTopping]) {
+         groceryList[eachTopping] = 1
+       } else {
+         groceryList[eachTopping] ++;
+       }
+        // console.log(groceryList[eachTopping] = 0)
+      })
+      return groceryList
+    }, {})
+    result;
 
     // Annotation:
     // Write your annotation here as a comment
@@ -241,8 +268,13 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const result = cakes.map((currentCake) => {
+      let flavorStock = { flavor: currentCake.cakeFlavor, stock: currentCake.inStock};
+      return flavorStock;
+     
+    }) 
+
+    result
 
     // Annotation:
     // Write your annotation here as a comment
@@ -252,11 +284,14 @@ const cakePrompts = {
     // Return the total amout of cakes in stock e.g.
     // 59
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const result = cakes.reduce((totalInStock, currentCake) => {
+      totalInStock = totalInStock + currentCake.inStock 
+      return totalInStock;
+    }, 0)
+    result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // I used reduce because I am given an array of objects and the prompt is asking for a single value. I know that reduce will take the values of each inStock value and will add the values as it iterates through. I have to set the value of the accumulator to a variable to save the values as reduce iterates through and adds them to the accumulator.
   },
 
   onlyInStock() {
@@ -321,11 +356,38 @@ const piePrompts = {
     //   sugar: 100
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+  const totalIngredients = Object.keys(pie.ingredients)
+  const reducedTotal = totalIngredients.reduce((acc, currentIngredient) => {
+    let piesNeeded = pie.desiredInventoryCount - pie.inventoryCount;
+    let ingredientTotal = pie.ingredients[currentIngredient] * piesNeeded;
+    acc[currentIngredient] = ingredientTotal
+    // console.log(ingredientTotal)
+    return acc
+  }, {})
+  console.log(reducedTotal)
 
-    // Annotation:
-    // Write your annotation here as a comment
+
+  // let piesNeeded = pie.desiredInventoryCount - pie.inventoryCount;
+  // let cinnamonTotal = pie.ingredients.cinnamon * piesNeeded;
+  // let sugarTotal = pie.ingredients.sugar * piesNeeded;
+  // const result = { cinnamon: cinnamonTotal, sugar: sugarTotal }
+
+  // result
+     
+
+
+// neededIngredients.reduce((totalIngredients, currentIngredients) => {
+//   let piesNeeded = pie.desiredInventoryCount - pie.inventoryCount;
+//   console.log()
+// totalIngredients = piesNeeded * currentIngredients.cinnamon
+// console.log(totalIngredients.cinnamon)
+
+//return totalIngredients
+// }, {})
+// return result;
+
+// Annotation:
+// Write your annotation here as a comment
   }
 };
 
