@@ -30,10 +30,10 @@ const scope = {
     // Log D: personC
 
     const result = [
-      {'A:' 'Ben'},
-      {'B:' 'CardiB'},
-      {'C:' 'CardiB'},
-      {'D:' 'Paul'}
+      {'A': 'Ben'},
+      {'B': 'CardiB'},
+      {'C': 'CardiB'},
+      {'D': 'Paul'}
 
     ];
     return result;
@@ -276,14 +276,12 @@ const scope = {
     fn1();
 
     const result = [
-      {'A:' 4},
-      {'D:' 9},
-      {'E:' 10}
-      {'B:' 9},
-      {'C:' 4},
-      
-
-    ];
+      {'A': 4},
+      {'D': 9},
+      {'E': 10},
+      {'B': 9},
+      {'C': 4}
+      ];
     return result;
 
     // Annotation:
@@ -315,12 +313,12 @@ const scope = {
     eatSnack();
     // Log E: hunger
 
-    const result =     const result = [
-      {'A:' 75},
-      {'B:' 0},
-      {'C:' 75},
-      {'D:' 80},
-      {'E:' 55},
+    const result =[
+      {'A': 75},
+      {'B': 0},
+      {'C': 75},
+      {'D': 80},
+      {'E': 55}
       ];
     return result;
 
@@ -380,12 +378,12 @@ const scope = {
     //LogF is National Treasure- and done...
 
     const result = [
-      {'A:' 'ketchup sandwich'},
-      {'D:' 'gouda'},
-      {'B:' 'undefined'},
-      {'C:' 'not a mediocre sandwich'},
-      {'E:' 'not a mediocre sandwich'},
-      {'F:' 'National Treasure'},
+      {'A': 'ketchup sandwich'},
+      {'D': 'gouda'},
+      {'B': 'undefined'},
+      {'C': 'not a mediocre sandwich'},
+      {'E': 'not a mediocre sandwich'},
+      {'F': 'National Treasure'}
       ];
     return result;
 
@@ -469,10 +467,10 @@ const scope = {
     // Log D: num
 
     const result = [
-      {'A;' 5},
-      {'B:' 6},
-      {'C:' 6},
-      {'D:' 6},
+      {'A': 5},
+      {'B': 6},
+      {'C': 6},
+      {'D': 6}
       ];
     return result;
 
@@ -514,12 +512,12 @@ const scope = {
     // Log F: instructor
 
     const result = [
-      {'E;' 'Pam'},
-      {'A:' 'Pam'},
-      {'B:' 'Pam'},
-      {'C:' 'Louisa'},
-      {'D:' 'Louisa'},
-      {'F:' 'Louisa'},
+      {'E': 'Pam'},
+      {'A': 'Pam'},
+      {'B': 'Pam'},
+      {'C': 'Louisa'},
+      {'D': 'Louisa'},
+      {'F': 'Louisa'},
       ];
     return result;
 
@@ -532,7 +530,7 @@ const scope = {
     var shoe = 'flipflop';
 
     function putOnShoe() {
-      console.log('Log A:' shoe)
+      // console.log('Log A:' shoe)
       var shoe = 'boot';
     }
 
@@ -541,9 +539,9 @@ const scope = {
     // Log C: shoe
 
     const result = [
-      {'B:' 'flipflop'},
-      {'A:' 'undefined'},
-      {'C:' 'flipflop'}
+      {'B': 'flipflop'},
+      {'A': 'undefined'},
+      {'C': 'flipflop'}
     ];
     return result;
 

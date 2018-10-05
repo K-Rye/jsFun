@@ -229,8 +229,8 @@ const cakePrompts = {
       return index == self.indexOf(elem);
     });
 
-    noDuplicateToppings
-
+    return noDuplicateToppings;
+  },
 
   groceryList() {
     // I need to make a grocery list. Please give me an object where the keys are
@@ -319,8 +319,7 @@ const cakePrompts = {
     const result = cakes.filter((currentCake) => {
         return currentCake.inStock;
     });
-
-    return result;
+    result;
 
 
     // Write your annotation here as a comment:
