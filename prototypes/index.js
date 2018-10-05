@@ -497,10 +497,11 @@ const kittyPrompts = {
   sortByAge() {
     // Sort the kitties by their age
 
-    const result = kitties.map((kitty) => {
-      return kitty 
-    })
-    result;
+   const result = kitties.sort((kittyA, kittyB) => {
+      return kittyA.age > kittyB.age;
+
+    });
+   result;
 
     // Annotation:
     // Write your annotation here as a comment
@@ -519,8 +520,17 @@ const kittyPrompts = {
     //   color: 'orange'
     // },
     // ...etc]
+    const result = kitties.filter((kitty) => {
+      return kitty.age >= 2;
+    })
+    result;
   };
+
+      // Annotation:
+    // Write your annotation here as a comment
+    //
 };
+
 
 
 

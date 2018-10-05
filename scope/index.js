@@ -315,52 +315,83 @@ const scope = {
     eatSnack();
     // Log E: hunger
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result =     const result = [
+      {'A:' 75},
+      {'B:' 0},
+      {'C:' 75},
+      {'D:' 80},
+      {'E:' 55},
+      ];
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    //Exercise I starts with the global assignment of the variable hunger to the value of 100. The function eatSnack is then declared but not invoked. After the function eatSnack is then invoked which brings us back up to the function where hunger is globally re-assigned to the value of 75 (Log A). gorgeYourself is then invoked which brings us to the function where hunger is functionally assigned the value of 0 (Log B). We leave the fiunction and encounter Log C which has the value of 75 because it looks up the scope chain to the global assignment of hunger. We leave the function where hunger is re-assigned to 80 by adding 5 (Log D:). eatSnack is invoked again subtracting 25 from our global assignment of hunger which re-assigns it the value of 55 (Log E) 
   },
 
   exerciseJ() {
     let sandwich = 'ketchup sandwich';
+   // Assgining the variable sandwich globally to the value of ketchup sandwich
+   // Log A: sandwich = ketchup sandwich
 
-    // Log A: sandwich
 
     const addChipotle = () => {
+      //adChipotle is being declared but not invoked move to addCheese
       // Log B: toppings
+      // Log B is undefined because toppings variable name is hoisted but value is not
       var toppings = 'chipotle sauce';
+      //toppings is funcitonally assigned to chipotle sauce-move to if block
 
       if (toppings === 'chipotle sauce') { 
         sandwich = 'not a mediocre sandwich';
       }
+      // the if statement checks to see if the value of toppings is chipotle sauce, which it is, so then moves to the next line where sandwich is re-assigned the value of not a mediocre sandwich
 
       // Log C: sandwich
+      //Log C is not a mediocre sandwich move to Log E
     }
 
     const addCheese = () => {
+      //addCheese is being declared but not invoked, move to cheeseTopping variable assignment
       let cheeseTopping = 'gouda';
+      // cheeseTopping is being functionally assigned to the value of gouda move to log D
       // Log D: cheeseTopping
-
+      //Log D is gouda move to shesTheManReference
       const shesTheManReference = () => {
+        // shesTheManReference is declared but not invoked move to shesTheManReference invocation
         amandaBynes = "National Treasure"
+        //amandaBynes is being globally assigned to the value of National Teasure-move out of function to addChipotle invocation
       }
 
       shesTheManReference();
+      //shesTheManReference is invoked moving us into the function
     }
 
     cheeseTopping = 'kraft';
+    //cheeseTopping is being assigned globally the value of kraft because it is not preceded by var let or const move to addCheese invocation
     addCheese();
+    //addCheese is invoked moving us into the addCheese function
 
     addChipotle();
+    //addChipotle is invoked moving us into the function
     // Log E: sandwich
+    //Log E is not a mediocre sandwich-move to Log F 
     // Log F: amandaBynes
+    //LogF is National Treasure- and done...
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A:' 'ketchup sandwich'},
+      {'D:' 'gouda'},
+      {'B:' 'undefined'},
+      {'C:' 'not a mediocre sandwich'},
+      {'E:' 'not a mediocre sandwich'},
+      {'F:' 'National Treasure'},
+      ];
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
   },
 
   exerciseK() {
@@ -386,6 +417,7 @@ const scope = {
 
   exerciseL() {
     let grade = 100;
+    //
 
     function losePoints() {
       grade = 90;
@@ -418,6 +450,7 @@ const scope = {
 
   exerciseM() {
     var num = 5;
+    //global declaratio of num to equal 5
 
     function first() {
       // Log A: num
@@ -435,11 +468,17 @@ const scope = {
 
     // Log D: num
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A;' 5},
+      {'B:' 6},
+      {'C:' 6},
+      {'D:' 6},
+      ];
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    //num is globally
   },
 
   exerciseN() {
@@ -474,11 +513,19 @@ const scope = {
 
     // Log F: instructor
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'E;' 'Pam'},
+      {'A:' 'Pam'},
+      {'B:' 'Pam'},
+      {'C:' 'Louisa'},
+      {'D:' 'Louisa'},
+      {'F:' 'Louisa'},
+      ];
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    //Instructor is globally assigned to the value of Pam. Function changeInstructor is declared but not invoked, which moves us to Log E which logs Pam. changeInstructor is invoked which moves us into the function to Log A which logs Pam. Moving into the if block we check if instructor = Brittany which it does not so we move to the else statement where instructor is block scope assigned to the value of Brittany. Log B is outside of the block so it logs the global value of Pam. Function rename is declared but not invoked. rename is invoked which brings us into the function. 
   },
 
   exerciseO() {
