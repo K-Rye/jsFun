@@ -520,15 +520,17 @@ const kittyPrompts = {
     //   color: 'orange'
     // },
     // ...etc]
+
     const result = kitties.filter((kitty) => {
       return kitty.age >= 2;
     })
     result;
-  };
+  }
 
       // Annotation:
     // Write your annotation here as a comment
     //
+
 };
 
 
@@ -621,5 +623,6 @@ module.exports = {
   classPrompts,
   modPrompts,
   kittyPrompts,
+  cakePrompts,
   astronomyPrompts
 };
