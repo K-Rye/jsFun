@@ -547,8 +547,35 @@ const scope = {
 
     // Annotation:
     // Write your annotation here as a comment
+
     // On line 469 we declare a global variable named shoe and assign it equal to flipflop then we declare a global function named putOnShoe but we skip down to line 469 because it hasn't been invoked yet . ON line 469 we log the value of shoe, which is flipflop at this point in time. The we go ahead and invoke our putOnShoe function and when we try to log shoe within our function, we get undefined because our shoe declaration on line 473 is hoisted to the top of that function scope. Once we've finished executing putOnShoe, we go back down to line 478 and log shoe again which will give us flipflop.
+
+  },
+
+  exerciseP() {
+    function orderLunch() {
+      if (typeof lunch === 'undefined') {
+        // Log A: lunch
+        let lunch = 'sandwich';
+      }
+
+      if (typeof lunch === 'undefined') {
+        lunch = 'soup';
+      }
+
+      // Log B: lunch
+    }
+
+    orderLunch();
+
+    // Log C: lunch
+
+    const result = 'REPLACE WITH YOUR RESULT HERE';
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
   }
-}
+},
 
 module.exports = scope;
